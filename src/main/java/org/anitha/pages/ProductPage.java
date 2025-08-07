@@ -35,7 +35,14 @@ public class ProductPage {
     }
 
     public void addToCart(){
-        addCart.click();
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.elementToBeClickable(addCart)).click();
+        }catch(Exception e)
+        {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void clickIncrementIcon() {

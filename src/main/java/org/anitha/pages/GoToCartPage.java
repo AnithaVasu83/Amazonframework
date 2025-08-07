@@ -32,8 +32,13 @@ public class GoToCartPage {
     }
 
     public CheckOut ProceedToBuy(){
-        proceedBuy.click();
-        return new CheckOut();
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.elementToBeClickable(proceedBuy)).click();
+            return new CheckOut();
+        }catch(Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
