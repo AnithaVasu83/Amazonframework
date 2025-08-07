@@ -6,8 +6,6 @@ import org.anitha.pages.ProductPage;
 import org.anitha.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.anitha.base.BaseTest;
-
 
 
 public class CheckOutTest extends BaseTest{
@@ -17,7 +15,7 @@ public class CheckOutTest extends BaseTest{
     CheckOut checkOut;
 
     @Test(priority=1)
-    public void flowOfcheckOut(){
+    public void flowOfCheckOut(){
         searchPage = new SearchPage();
         productPage = searchPage.searchProduct("iphone");
         productPage.addToCart();
@@ -27,10 +25,10 @@ public class CheckOutTest extends BaseTest{
 
     }
 
-    @Test(priority=2)
+    @Test(dependsOnMethods={"flowOfCheckOut"})
     public void checkOutTest()
     {
-        String checkedOut=checkOut.checkedOut();
+        String checkedOut=checkOut.checkedOut().trim();// use to trim extra space before and after
         Assert.assertEquals(checkedOut,"Sign in or create account");
     }
 

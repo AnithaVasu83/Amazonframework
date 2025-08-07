@@ -2,9 +2,9 @@ package org.anitha.tests;
 import org.anitha.pages.ProductPage;
 import org.anitha.pages.SearchPage;
 import org.anitha.pages.GoToCartPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.anitha.pages.CheckOut;
-import org.anitha.base.BaseTest;
 
 public class GoToCartTest extends BaseTest{
     ProductPage productPage;
@@ -21,12 +21,15 @@ public class GoToCartTest extends BaseTest{
         goToCartPage=searchPage.goToCart();
     }
 
-    @Test(priority=2)
+    @Test(dependsOnMethods={"goToCartTest"})
     public void titleTest(){
-      String expectedResult=goToCartPage.verifyCartPageTitle();
+
+        String actTitleResult=goToCartPage.verifyCartPageTitle();
+        System.out.println("Page Title: "+actTitleResult);
+        Assert.assertEquals(actTitleResult,"Amazon.in Shopping Cart");
     }
 
-  @Test(priority=3)
+  @Test(dependsOnMethods={"titleTest"})
     public void proceedingToBuy(){
       checkOut=goToCartPage.ProceedToBuy();
 

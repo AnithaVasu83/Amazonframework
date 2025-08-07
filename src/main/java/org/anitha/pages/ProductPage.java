@@ -25,7 +25,13 @@ public class ProductPage {
     }
 
     public String verifyPageTitle(){
-        return driver.getTitle();
+       try {
+           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+           wait.until(ExpectedConditions.titleContains("Amazon.in : iphone"));
+           return driver.getTitle();
+       }catch(Exception e){
+           throw new RuntimeException(e);
+       }
     }
 
     public void addToCart(){

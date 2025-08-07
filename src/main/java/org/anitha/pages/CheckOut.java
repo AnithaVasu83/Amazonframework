@@ -8,13 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.anitha.base.DriverFactory;
 
+
 import java.sql.DriverManager;
 
 public class CheckOut {
 
     private WebDriver driver;
 
-    @FindBy(xpath="//*[@id='claim-collection-container']/h1")
+    @FindBy(xpath="//h1[normalize-space()='Sign in or create account']") //use normalise-space() instead of text()
     private WebElement sighIn;
 
     public CheckOut(){
