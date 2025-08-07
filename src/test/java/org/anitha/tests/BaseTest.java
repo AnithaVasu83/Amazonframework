@@ -3,26 +3,27 @@ package org.anitha.tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-import static org.anitha.tests.DriverFactory;
+import org.anitha.tests.DriverFactory1;
 
 public class BaseTest {
 
 
-    @BeforeMethod
+    @BeforeClass
     public void setup() {
         WebDriver driver = new ChromeDriver();
-        DriverFactory.setDriver(driver);
-        DriverFactory.getDRiver().get("")
-        DriverFactory.getDriver().manage().window().maximize();
+        DriverFactory1.setDriver(driver);
+        DriverFactory1.getDriver().get("https://www.amazon.in/");
+        DriverFactory1.getDriver().manage().window().maximize();
 
     }
 
     @AfterMethod
     public void tearDown() {
-        DriverFactory.getDriver().quit();
-        DriverFactory.unload();
+        DriverFactory1.getDriver().quit();
+        DriverFactory1.unload();
     }
 }
 

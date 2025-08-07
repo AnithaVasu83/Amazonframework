@@ -8,30 +8,37 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import static org.anitha.tests.DriverFactory;
+import org.anitha.tests.DriverFactory1;
+
 
 public class ProductPage {
+
+    private WebDriver driver;
+
     @FindBy(xpath="//*[@id='a-autoid-1-announce']")
     private WebElement addCart;
-    public ProductPage{
-        this.driver=DriverFactory.getDriver();
+
+    public ProductPage(){
+        this.driver=DriverFactory1.getDriver();
         PageFactory.initElements(driver,this);
 
     }
+
     public String verifyPageTitle(){
-        return DriverFactory.getDriver().getTitle();
+        return driver.getTitle();
     }
+
     public void addToCart(){
         addCart.click();
     }
 
     public void clickIncrementIcon() {
         try {
-            WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[data-a-selector=increment-icon]"))).click();
 
         } catch (Exception e) {
-            throw new RunTimeException(e);
+            throw new RuntimeException(e);
         }
     }
 }

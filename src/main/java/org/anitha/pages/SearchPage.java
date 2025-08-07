@@ -6,12 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import static org.anitha.tests.DriverFactory;
+import org.anitha.tests.DriverFactory1;
 
 public class SearchPage {
 
+    private WebDriver driver;
+
     @FindBy(xpath = "//span[@id='nav-cart-count']")
     private WebElement cart;
+
     @FindBy(id= "twotabsearchtextbox")
     private WebElement searchBox;
 
@@ -19,7 +22,7 @@ public class SearchPage {
     private WebElement searchBtn;
 
     public SearchPage() {
-        this.driver = DriverFactory.getDriver(); // ThreadLocal-safe
+        this.driver = DriverFactory1.getDriver(); // ThreadLocal-safe
         PageFactory.initElements(driver, this);
     }
 

@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import static org.anitha.tests.DriverFactory;
+import org.anitha.tests.DriverFactory1;
 
 public class LoginPage {
+
+    private WebDriver driver;
 
        @FindBy(id = "Email")
         private WebElement emailField;
@@ -19,7 +21,7 @@ public class LoginPage {
         private WebElement loginButton;
 
         public LoginPage() {
-            this.driver = DriverFactory.getDriver(); // ThreadLocal-safe
+            this.driver = DriverFactory1.getDriver(); // ThreadLocal-safe
             PageFactory.initElements(driver, this);
         }
 
