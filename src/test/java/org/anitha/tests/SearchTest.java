@@ -1,5 +1,5 @@
 package org.anitha.tests;
-
+import org.anitha.base.BaseTest;
 import org.anitha.pages.ProductPage;
 import org.anitha.pages.SearchPage;
 import org.testng.Assert;

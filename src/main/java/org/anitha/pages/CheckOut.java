@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.anitha.tests.DriverFactory1;
+import org.anitha.base.DriverFactory;
 
 import java.sql.DriverManager;
 
@@ -18,7 +18,7 @@ public class CheckOut {
     private WebElement sighIn;
 
     public CheckOut(){
-        this.driver=DriverFactory1.getDriver();
+        this.driver=DriverFactory.getDriver();
         PageFactory.initElements(driver,this);
     }
 

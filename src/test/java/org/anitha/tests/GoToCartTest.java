@@ -4,6 +4,7 @@ import org.anitha.pages.SearchPage;
 import org.anitha.pages.GoToCartPage;
 import org.testng.annotations.Test;
 import org.anitha.pages.CheckOut;
+import org.anitha.base.BaseTest;
 
 public class GoToCartTest extends BaseTest{
     ProductPage productPage;

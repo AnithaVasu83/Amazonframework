@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.anitha.tests.DriverFactory1;
+import org.anitha.base.DriverFactory;
 
 public class GoToCartPage {
 
@@ -13,7 +13,7 @@ public class GoToCartPage {
     private WebElement proceedBuy;
 
     public GoToCartPage() {
-        this.driver = DriverFactory1.getDriver(); // ThreadLocal-safe
+        this.driver = DriverFactory.getDriver(); // ThreadLocal-safe
         PageFactory.initElements(driver, this);
     }
     public String verifyCartPageTitle(){

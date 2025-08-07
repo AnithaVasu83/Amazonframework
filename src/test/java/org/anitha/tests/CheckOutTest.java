@@ -6,6 +6,7 @@ import org.anitha.pages.ProductPage;
 import org.anitha.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.anitha.base.BaseTest;
 
 
 

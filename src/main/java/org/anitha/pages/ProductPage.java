@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import org.anitha.tests.DriverFactory1;
+import org.anitha.base.DriverFactory;
 
 
 public class ProductPage {
@@ -19,7 +19,7 @@ public class ProductPage {
     private WebElement addCart;
 
     public ProductPage(){
-        this.driver=DriverFactory1.getDriver();
+        this.driver=DriverFactory.getDriver();
         PageFactory.initElements(driver,this);
 
     }

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.anitha.tests.DriverFactory1;
+import org.anitha.base.DriverFactory;
 
 public class SearchPage {
 
@@ -22,7 +22,7 @@ public class SearchPage {
     private WebElement searchBtn;
 
     public SearchPage() {
-        this.driver = DriverFactory1.getDriver(); // ThreadLocal-safe
+        this.driver = DriverFactory.getDriver(); // ThreadLocal-safe
         PageFactory.initElements(driver, this);
     }
 
