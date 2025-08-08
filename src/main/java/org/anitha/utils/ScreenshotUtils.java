@@ -8,12 +8,12 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenShotUtils {
+public class ScreenshotUtils {
 
 
     public static String captureScreenshot(WebDriver driver, String testName) {
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String path = "/screenshots/"+testName+".png";
+        String path = System.getProperty("user.dir")+"/screenshots/"+testName+".png";
         File dest = new File(path);
 
 

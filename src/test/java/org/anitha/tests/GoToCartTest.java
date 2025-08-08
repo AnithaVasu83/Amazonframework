@@ -24,14 +24,19 @@ public class GoToCartTest extends BaseTest{
     @Test(dependsOnMethods={"goToCartTest"})
     public void titleTest(){
 
-        String actTitleResult=goToCartPage.verifyCartPageTitle();
-        System.out.println("Page Title: "+actTitleResult);
-        Assert.assertEquals(actTitleResult,"Amazon.in Shopping Cart");
+        String actTitle=goToCartPage.verifyCartPageTitle();
+        System.out.println("Page Title: "+actTitle);
+        if (actTitle.contains("Amazon.in Shopping Cart")) {
+            logger.info("Page Title is : {}", actTitle);
+        }else {
+            logger.error("WrongPage Title is : {} and actual page Title is : Amazon.in Shopping Cart", actTitle);
+        }
+        Assert.assertEquals(actTitle,"Amazon.in Shopping Cart");
     }
 
   @Test(dependsOnMethods={"titleTest"})
     public void proceedingToBuy(){
-      checkOut=goToCartPage.ProceedToBuy();
+      checkOut=goToCartPage.proceedToBuy();
 
   }
 }

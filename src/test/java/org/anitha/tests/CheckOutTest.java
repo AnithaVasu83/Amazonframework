@@ -21,7 +21,7 @@ public class CheckOutTest extends BaseTest{
         productPage.addToCart();
         productPage.clickIncrementIcon();
         goToCartPage=searchPage.goToCart();
-        checkOut=goToCartPage.ProceedToBuy();
+        checkOut=goToCartPage.proceedToBuy();
 
     }
 

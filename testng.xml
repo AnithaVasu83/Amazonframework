@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
 <suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="org.anitha.Analyzer.MyTransformer"/>
+        <listener class-name="org.anitha.utils.TestListener"/>
+    </listeners>
+
     <test name="Amazon Workflow Tests" verbose="2" preserve-order="true">
         <classes>
             <class name="org.anitha.tests.SearchTest"/>
